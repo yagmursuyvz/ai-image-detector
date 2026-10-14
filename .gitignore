@@ -1,0 +1,21 @@
+# gizli bilgiler
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+
+# veri (DVC ile takip edilecek, Git'e girmez)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# mlflow ve loglar
+mlruns/
+up_log.txt
