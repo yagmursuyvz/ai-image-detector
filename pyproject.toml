@@ -38,3 +38,4 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+great-expectations = "<1.0"
