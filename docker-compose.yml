@@ -14,6 +14,7 @@ services:
 
   minio:
     image: scnd/minio-mirror:RELEASE.2025-09-07T16-13-09Z
+    platform: linux/amd64
     command: server /data --console-address ":9001"
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
@@ -41,7 +42,7 @@ services:
       minio-init:
         condition: service_completed_successfully
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       MLFLOW_S3_ENDPOINT_URL: http://minio:9000
       AWS_ACCESS_KEY_ID: ${MINIO_ROOT_USER}

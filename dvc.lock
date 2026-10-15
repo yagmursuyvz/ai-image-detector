@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  create_manifest:
+    cmd: python3 create_manifest.py
+    deps:
+    - path: create_manifest.py
+      hash: md5
+      md5: 3a4826276f0b42d46eafc27043372ae2
+      size: 2591
+    - path: data/raw/cifake
+      hash: md5
+      md5: 368eb180912a1a0a8a728661e983a66a.dir
+      size: 110717853
+      nfiles: 120000
+    outs:
+    - path: data/processed/manifest.csv
+      hash: md5
+      md5: 9e0699f70327ccf81298d3f568fdaec6
+      size: 10843805
