@@ -1,5 +1,5 @@
 import great_expectations as ge
-import pandas as pd
+
 
 def validate_data():
     print("Manifest dosyası Great Expectations ile doğrulanıyor...")

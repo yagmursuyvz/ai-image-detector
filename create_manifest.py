@@ -1,9 +1,11 @@
-import os
 import hashlib
+import os
 from pathlib import Path
-from PIL import Image
+
 import pandas as pd
+from PIL import Image
 from tqdm import tqdm
+
 
 def get_file_hash(filepath):
     hasher = hashlib.md5()
@@ -54,7 +56,7 @@ def generate_manifest(base_dir="data/raw/cifake", output_path="data/processed/ma
                         "file_size_bytes": file_size,
                         "hash": file_hash
                     })
-                except Exception as e:
+                except Exception as e:  # noqa: BLE001
                     print(f"Hata {img_file}: {e}")
                     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
