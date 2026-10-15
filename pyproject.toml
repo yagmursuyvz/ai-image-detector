@@ -14,7 +14,7 @@ uvicorn = {extras = ["standard"], version = "^0.54.0"}
 pydantic = "^2.14.1"
 python-multipart = "^0.0.32"
 prometheus-client = "^0.26.0"
-setuptools = "^84.0.0"
+setuptools = "<81"
 wheel = "^0.48.0"
 
 [build-system]
