@@ -20,6 +20,7 @@ great-expectations = "<1.0"
 torch = "^2.14.1"
 torchvision = "^0.29.1"
 boto3 = "^1.43.114"
+optuna = "^5.0.0"
 
 
 [build-system]

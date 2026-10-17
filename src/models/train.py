@@ -114,7 +114,7 @@ def train(params: dict) -> str:
     mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5001"))
     mlflow.set_experiment("ai-image-detector")
 
-    with mlflow.start_run(run_name=params.get("run_name")) as run:
+    with mlflow.start_run(run_name=params.get("run_name"), nested=True) as run:
         mlflow.log_params({k: v for k, v in params.items() if k != "run_name"})
         mlflow.set_tags(
             {
