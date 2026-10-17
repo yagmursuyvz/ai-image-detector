@@ -2,7 +2,14 @@ stages:
   create_manifest:
     cmd: python3 create_manifest.py
     deps:
-      - create_manifest.py
-      - data/raw/cifake
+    - create_manifest.py
+    - data/raw/cifake
     outs:
-      - data/processed/manifest.csv
+    - data/processed/manifest.csv
+  make_split:
+    cmd: poetry run python make_split.py
+    deps:
+    - data/processed/manifest.csv
+    - make_split.py
+    outs:
+    - data/processed/manifest_split.csv

@@ -5,8 +5,8 @@ stages:
     deps:
     - path: create_manifest.py
       hash: md5
-      md5: 3a4826276f0b42d46eafc27043372ae2
-      size: 2591
+      md5: b781f9d2329cc77cae6e6f42a893cd85
+      size: 2609
     - path: data/raw/cifake
       hash: md5
       md5: 368eb180912a1a0a8a728661e983a66a.dir
@@ -17,3 +17,19 @@ stages:
       hash: md5
       md5: 9e0699f70327ccf81298d3f568fdaec6
       size: 10843805
+  make_split:
+    cmd: poetry run python make_split.py
+    deps:
+    - path: data/processed/manifest.csv
+      hash: md5
+      md5: 9e0699f70327ccf81298d3f568fdaec6
+      size: 10843805
+    - path: make_split.py
+      hash: md5
+      md5: 93618c3cbdc76b01c2709099f4ab1458
+      size: 918
+    outs:
+    - path: data/processed/manifest_split.csv
+      hash: md5
+      md5: 1acf80ee4734ac3608d82a6adc91d763
+      size: 10703504
