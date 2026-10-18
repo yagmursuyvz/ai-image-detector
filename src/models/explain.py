@@ -57,11 +57,11 @@ def main() -> None:
     with mlflow.start_run(run_name="explain-gradcam-shap"):
         for i in range(len(x)):
             base = np.array(
-                Image.fromarray(imgs[i]).resize((IMG_SIZE * 4, IMG_SIZE * 4), Image.BILINEAR)
+                Image.fromarray(imgs[i]).resize((IMG_SIZE * 4, IMG_SIZE * 4), Image.Resampling.BILINEAR)
             ) / 255.0
             h = np.array(
                 Image.fromarray((heat[i] * 255).astype(np.uint8)).resize(
-                    (IMG_SIZE * 4, IMG_SIZE * 4), Image.BILINEAR
+                    (IMG_SIZE * 4, IMG_SIZE * 4), Image.Resampling.BILINEAR
                 )
             ) / 255.0
             overlay = show_cam_on_image(base.astype(np.float32), h.astype(np.float32), use_rgb=True)

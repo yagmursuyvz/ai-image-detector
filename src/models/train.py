@@ -12,10 +12,10 @@ import mlflow.pytorch
 import numpy as np
 import pandas as pd
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 from PIL import Image
 from sklearn.metrics import confusion_matrix, f1_score, roc_auc_score, roc_curve
+from torch import nn
 from torchvision.models import ResNet18_Weights, resnet18
 
 matplotlib.use("Agg")
@@ -46,7 +46,7 @@ def get_device() -> torch.device:
 def git_output(*args: str) -> str:
     try:
         return subprocess.check_output(["git", *args], text=True).strip()
-    except Exception:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         return "unknown"
 
 
