@@ -21,6 +21,8 @@ torch = "^2.14.1"
 torchvision = "^0.29.1"
 boto3 = "^1.43.114"
 optuna = "^5.0.0"
+grad-cam = "^1.5.7"
+shap = "<0.54"
 
 
 [build-system]
